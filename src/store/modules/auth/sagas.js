@@ -17,10 +17,10 @@ export function* signIn({ payload }) {
     const { token, user } = response.data;
 
     if (user.provider) {
-      Alert.alert([
+      Alert.alert(
         'Erro no login',
-        'O usuário não pode ser prestador de serviços',
-      ]);
+        'O usuário não pode ser prestador de serviços'
+      );
       yield put(signFailure());
       return;
     }
@@ -31,10 +31,10 @@ export function* signIn({ payload }) {
 
     // history.push('/dashboard');
   } catch (err) {
-    Alert.alert([
+    Alert.alert(
       'Erro no login',
-      'Houve um erro no login, verifique seus dados',
-    ]);
+      'Houve um erro no login, verifique seus dados'
+    );
     yield put(signFailure());
   }
 }
@@ -51,10 +51,10 @@ export function* signUp({ payload }) {
 
     // history.push('/');
   } catch (err) {
-    Alert.alert([
+    Alert.alert(
       'Erro no login',
-      'Houve um erro no cadastro, verifique seus dados',
-    ]);
+      'Houve um erro no cadastro, verifique seus dados'
+    );
     yield put(signFailure());
   }
 }
